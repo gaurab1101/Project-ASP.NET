@@ -1,0 +1,31 @@
+﻿@model IEnumerable<MusicPlaylistManager.Models.Playlist>
+
+<h1>Playlists</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Genre</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var playlist in Model)
+        {
+            <tr>
+                <td>@playlist.Name</td>
+                <td>@playlist.Genre</td>
+                <td>@playlist.Description</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@playlist.PlaylistId">Details</a> |
+                    <a asp-action="Edit" asp-route-id="@playlist.PlaylistId">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@playlist.PlaylistId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create">Create New</a>

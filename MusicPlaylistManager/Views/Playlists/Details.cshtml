@@ -1,0 +1,35 @@
+﻿@model MusicPlaylistManager.Models.Playlist
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Playlist</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">Name</dt>
+        <dd class="col-sm-10">@Model.Name</dd>
+
+        <dt class="col-sm-2">Genre</dt>
+        <dd class="col-sm-10">@Model.Genre</dd>
+
+        <dt class="col-sm-2">Description</dt>
+        <dd class="col-sm-10">@Model.Description</dd>
+    </dl>
+
+    <h4>Songs</h4>
+    <hr />
+    <ul>
+        @foreach (var song in Model.Songs)
+        {
+            <li>@song.Title by @song.Artist</li>
+        }
+    </ul>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
