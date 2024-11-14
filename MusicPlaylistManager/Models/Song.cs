@@ -18,6 +18,7 @@ namespace MusicPlaylistManager.Models
 
         public int PlaylistId { get; set; }
         public Playlist Playlist { get; set; } // Navigation property
+        
     }
 }
 
